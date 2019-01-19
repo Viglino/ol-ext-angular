@@ -4,7 +4,7 @@ This project is an example to use ol+ol-ext with Angular 7.
 
 > It is by no means a complete app but you should find mecanisms to handle a map with interaction and controls to customize for your own .
 
-## Mecanisms
+## Goal
 
 The goal of this example is to create a map as simple as this:
 
@@ -46,19 +46,25 @@ We also want to create more than one map:
 </app-map>
 ````
 
+## Mecanisms
+
+### MapService  and MapidService
+
+
+### Creating new components
+
+
 ## Build
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
+### Install
+
+Run `npm install` to install node modules and start developping.
+
 ### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-### Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
