@@ -1,0 +1,35 @@
+app-map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 2em;
+    width: 50%;
+  }
+#map1 {
+  right: 0;
+  left: auto;
+}
+
+.ctrl {
+  position: fixed;
+  right: 0;
+  background: #fff;
+}
+.ctrl >>> .ol-bookmark div {
+  display: block!important;
+}
+
+app-mouse-position {
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: sans-serif;
+}
+app-mouse-position >>> div {
+  bottom: 0;
+  top: auto;
+  left: 0;
+}

@@ -1,0 +1,31 @@
+<!-- A first map -->
+<app-map>
+  <!-- Add a layer OSM -->
+  <app-layer 
+    layer= "OSM"
+    opacity= .5
+    visibility= true
+  ></app-layer>
+  <!-- Add interaction -->
+  <app-interaction></app-interaction>
+  <!-- Add a control insde the map (boolmark) -->
+  <app-control></app-control>
+</app-map>
+
+<!-- A second map -->
+<app-map id="map1"
+  lon=2.4246 
+  lat=48.845 
+  zoom=13
+>
+  <!-- Add a layer watercolor -->
+  <app-layer layer="watercolor"></app-layer>
+  <!-- Add a layer labels -->
+  <app-layer layer="labels"></app-layer>
+  <!-- Add interaction -->
+  <app-interaction></app-interaction>
+</app-map>
+
+<!-- Define control outside the map -->
+<app-mouse-position></app-mouse-position>
+<app-mouse-position mapId="map1"></app-mouse-position>
