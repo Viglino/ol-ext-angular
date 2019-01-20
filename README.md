@@ -6,8 +6,7 @@ This project is an example to use [Openlayers](https://github.com/openlayers/ope
 
 ## Goal
 
-The goal of this example is to create a map as simple as this:
-
+The goal of this example is to create a map as simple as that:
 ````html
 <app-map id="map">
   <!-- Add a layers -->
@@ -69,9 +68,11 @@ The parameter is the id of the map you want to get. If you just have one map you
 
 #### Getting the current map
 
-The `MapidService` let you handle the current map id. 
+The `MapidService` let you handle the current map's id. 
 It is used by the map component to register a new map id (`mapServe.setId()`).
-It's not a root service and each map has its own one thus each component defined inside a map component can access the current map id using this service using the `getId()` method.
+It's not a root service and each map has its own one thus each component defined inside a map component can access the current map id using the `getId()` method of the service.
+
+This id is registered by the root `MapComponent` (using the `setId()`method).
 
 
 #### Customizing the map
@@ -79,9 +80,9 @@ It's not a root service and each map has its own one thus each component defined
 Feel free to modify the `createMap()` method of the `MapService` to handle the default map.    
 The `MapComponent` let you define the map itself. Use the `ngOnInit()` method to customize the map (set zoom, etc.).
 
-### Creating new components
+### Creating new map components (controls, layers, interactions...)
 
-This example comes with a set of components for each ol map feature: controls, interaction, layer...
+This example comes with a set of components for each Openlayers map features: controls, interactions, layer...
 Just copy .ts file to create a new one to use in your app.
 
 You first have to declare the services in your constructor:
@@ -92,7 +93,7 @@ You first have to declare the services in your constructor:
     private mapidService: MapidService
   ) { }
 ````
-Then in ngOnInit, get the current maplike this:
+Then in ngOnInit, get the current map like this:
 ````javascript
   ngOnInit() {
     // Get the current map
@@ -101,7 +102,7 @@ Then in ngOnInit, get the current maplike this:
   }
 ````
 
-To let the control be set inside or outside the map you also need to get the target ElementRef. In this case the MapidService is optional (when set outside the map).
+To let the control be set inside or outside the map you also need to get the target ElementRef. In this case the MapidService is optional (as it comes inside a MapComponent it is not defined when set outside a map).
 
 #### Example
 
@@ -110,7 +111,8 @@ The example defines:
 * a set of layers define using a component propertie
 * an interaction to synchonize the maps together
 * a control inside the map (Bookmark contol)
-* a control outside the map (MousePosition)
+* a control outside the map (MousePosition).
+
 
 ## Build
 
