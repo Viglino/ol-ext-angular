@@ -82,8 +82,8 @@ The `MapComponent` let you define the map itself. Use the `ngOnInit()` method to
 
 ### Creating new map components (controls, layers, interactions...)
 
-This example comes with a set of components for each Openlayers map features: controls, interactions, layer...
-Just copy .ts file to create a new one to use in your app.
+This example comes with a set of components for each Openlayers map features: controls, interactions, layer...    
+Just copy the `.ts` file to create a new one to use in your app.
 
 You first have to declare the services in your constructor:
 ````javascript
