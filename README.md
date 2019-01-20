@@ -1,8 +1,8 @@
-# OlExtAngular
+# &nbsp;![](src/favicon.ico) ol-ext + Angular
+ 
+This project is an example to use [Openlayers](https://github.com/openlayers/openlayers) and [ol-ext](https://github.com/Viglino/ol-ext) with [Angular 7](https://angular.io/).
 
-This project is an example to use ol+ol-ext with Angular 7.
-
-> It is by no means a complete app but you should find mecanisms to handle a map with interaction and controls to customize for your own .
+> It is by no means a complete app but you should find mecanisms to handle an Openlayers map using Angular, with interactions and controls to customize for your own.
 
 ## Goal
 
