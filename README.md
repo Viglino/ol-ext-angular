@@ -71,17 +71,46 @@ The parameter is the id of the map you want to get. If you just have one map you
 
 The `MapidService` let you handle the current map id. 
 It is used by the map component to register a new map id (`mapServe.setId()`).
-It's not a root service and each map has its own one ths each commpenent defined inside a map compenent can access the cuurent map id using this service using the `getId()` method/
+It's not a root service and each map has its own one thus each component defined inside a map component can access the current map id using this service using the `getId()` method.
 
 
 #### Customizing the map
 
-Feel free to modify the `createMap()` method of the mapService to handle the default map.    
-The `map` component let you define the map itself. Use the `ngOnInit()` method to customize the map.
-
+Feel free to modify the `createMap()` method of the `MapService` to handle the default map.    
+The `MapComponent` let you define the map itself. Use the `ngOnInit()` method to customize the map (set zoom, etc.).
 
 ### Creating new components
 
+This example comes with a set of components for each ol map feature: controls, interaction, layer...
+Just copy .ts file to create a new one to use in your app.
+
+You first have to declare the services in your constructor:
+````javascript
+  constructor(
+    private mapService: MapService,
+    @Host()
+    private mapidService: MapidService
+  ) { }
+````
+Then in ngOnInit, get the current maplike this:
+````javascript
+  ngOnInit() {
+    // Get the current map
+    const map: OlMap = this.mapService.getMap(this.mapidService);
+    // Add component to the map
+  }
+````
+
+To let the control be set inside or outside the map you also need to get the target ElementRef. In this case the MapidService is optional (when set outside the map).
+
+#### Example
+
+The example defines:
+* 2 maps 
+* a set of layers define using a component propertie
+* an interaction to synchonize the maps together
+* a control inside the map (Bookmark contol)
+* a control outside the map (MousePosition)
 
 ## Build
 
