@@ -103,6 +103,7 @@ Then in ngOnInit, get the current map like this:
 ````
 
 To let the control be set inside or outside the map you also need to get the target ElementRef. In this case the MapidService is optional (as it comes inside a MapComponent it is not defined when set outside a map).
+Look at the [ControlComponent](src/app/map/control/control.component.ts) for more informations.
 
 #### Example
 
