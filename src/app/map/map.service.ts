@@ -62,4 +62,20 @@ export class MapService {
     return this.map[id];
   }
 
+  /** Get all maps
+   * NB: to access the complete list of maps you should use the ngAfterViewInit() method to have all maps instanced.
+   * @return the list of maps
+   */
+  getMaps() {
+    return this.map;
+  }
+
+  /** Get all maps
+   * NB: to access the complete list of maps you should use the ngAfterViewInit() method to have all maps instanced.
+   * @return array of maps
+   */
+  getArrayMaps() {
+    return Object.values(this.map);
+  }
+
 }

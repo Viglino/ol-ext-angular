@@ -22,7 +22,6 @@ export class MousePositionComponent implements OnInit {
   @Input() mapId: string;
 
   /**
-   * Add a bookmark control to the map
    */
   constructor(
     private mapService: MapService,

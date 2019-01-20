@@ -19,10 +19,7 @@ import Synchronize from 'ol-ext/interaction/Synchronize';
 
 export class InteractionComponent implements OnInit {
 
-  @Input() layer;
-
-  /**
-   * Add new layers to the map
+  /** Define the service
    */
   constructor(
     private mapService: MapService,
@@ -30,6 +27,8 @@ export class InteractionComponent implements OnInit {
     private mapidService: MapidService
   ) { }
 
+  /** Add new interaction to the map
+   */
   ngOnInit() {
     // Get the current map
     const map: OlMap = this.mapService.getMap(this.mapidService);

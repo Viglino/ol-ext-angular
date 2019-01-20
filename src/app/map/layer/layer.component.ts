@@ -29,8 +29,7 @@ export class LayerComponent implements OnInit {
   /** Layer visibility */
   @Input() visibility = true;
 
-  /**
-   * Add new layers to the map
+  /** Define the service
    */
   constructor(
     private mapService: MapService,
@@ -38,6 +37,8 @@ export class LayerComponent implements OnInit {
     private mapidService: MapidService
   ) { }
 
+  /** Add layer to the map
+   */
   ngOnInit() {
     // Get the current map
     const map: OlMap = this.mapService.getMap(this.mapidService);

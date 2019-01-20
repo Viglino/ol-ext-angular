@@ -28,7 +28,7 @@ export class ControlComponent implements OnInit {
    */
   @Input() mapId: string;
 
-  /**  Add a bookmark control to the map
+  /** Define the service
    */
   constructor(
     private mapService: MapService,
@@ -38,6 +38,8 @@ export class ControlComponent implements OnInit {
     private elementRef: ElementRef
   ) { }
 
+  /** Add the control to the map
+   */
   ngOnInit() {
     // Get the current map or get map by id
     const map: OlMap = this.mapService.getMap(this.mapidService || this.mapId);
