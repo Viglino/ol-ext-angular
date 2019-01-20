@@ -70,7 +70,7 @@ The parameter is the id of the map you want to get. If you just have one map you
 
 The `MapidService` let you handle the current map's id. 
 It is used by the map component to register a new map id (`mapServe.setId()`).
-It's not a root service and each map has its own one thus each component defined inside a map component can access the current map id using the `getId()` method of the service.
+It's not a root service and each map has its own one, thus each component defined inside a map component can access the current map id using the `getId()` method of the service.
 
 This id is registered by the root `MapComponent` (using the `setId()`method).
 
