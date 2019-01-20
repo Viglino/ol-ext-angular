@@ -16,7 +16,7 @@ The goal of this example is to create a map as simple as this:
   <!-- Add interactionq -->
   <app-interaction1></app-interaction1>
   <app-interaction2></app-interaction2>
-  <!-- Add a controlq insde the map -->
+  <!-- Add a controls inside the map -->
   <app-control1></app-control1>
   <app-control2></app-control2>
 </app-map>
@@ -27,9 +27,10 @@ As controls can be set outside the map (using the target option) we also want to
 <app-map id="map">
   <!-- Add a layers -->
   <app-layer layer="OSM" opacity=.5 visibility=true></app-layer>
-  <!-- Add a controls insde the map (boolmark) -->
+  <!-- Add a controls inside the map -->
   <app-control1></app-control1>
 </app-map>
+
 <!-- Add control outside -->
 <app-control2 mapId="map"></app-control2>
 ````
@@ -40,6 +41,7 @@ We also want to create more than one map:
   <!-- Add a layers -->
   <app-layer layer="OSM" opacity=.5 visibility=true></app-layer>
 </app-map>
+
 <app-map id="map2">
   <!-- Add a layers -->
   <app-layer layer="watermark"></app-layer>
@@ -48,7 +50,34 @@ We also want to create more than one map:
 
 ## Mecanisms
 
-### MapService  and MapidService
+### MapService and MapidService
+
+The map is implemented as a service to let you access it in other components.    
+
+#### Getting a map
+You just have to declare the service in your constructor to access the map:
+````javascript
+constructor(private mapService: MapService) { }
+````
+Then to retrieve the map you want, use the `getMap` method:
+````javascript
+const map = mapService.getMap();
+// another map
+cpnst map1 = mapService.getMap('map1');
+````
+The parameter is the id of the map you want to get. If you just have one map you can use the default value (`map`).
+
+#### Getting the current map
+
+The `MapidService` let you handle the current map id. 
+It is used by the map component to register a new map id (`mapServe.setId()`).
+It's not a root service and each map has its own one ths each commpenent defined inside a map compenent can access the cuurent map id using this service using the `getId()` method/
+
+
+#### Customizing the map
+
+Feel free to modify the `createMap()` method of the mapService to handle the default map.    
+The `map` component let you define the map itself. Use the `ngOnInit()` method to customize the map.
 
 
 ### Creating new components
