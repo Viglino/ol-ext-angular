@@ -60,9 +60,10 @@ constructor(private mapService: MapService) { }
 ````
 Then to retrieve the map you want, use the `getMap` method:
 ````javascript
+// Default map (id=map)
 const map = mapService.getMap();
-// another map
-cpnst map1 = mapService.getMap('map1');
+// another map (id=map1)
+const map1 = mapService.getMap('map1');
 ````
 The parameter is the id of the map you want to get. If you just have one map you can use the default value (`map`).
 
