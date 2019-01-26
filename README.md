@@ -12,7 +12,7 @@ The goal of this example is to create a map as simple as that:
   <!-- Add a layers -->
   <app-layer layer="OSM" opacity=.5 visibility=true></app-layer>
   <app-layer layer="watermark" visibility=false></app-layer>
-  <!-- Add interactionq -->
+  <!-- Add interactions -->
   <app-interaction1></app-interaction1>
   <app-interaction2></app-interaction2>
   <!-- Add a controls inside the map -->
